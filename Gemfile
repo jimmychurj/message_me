@@ -30,7 +30,6 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
 
-gem 'sqlite3'
 gem 'pg'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -42,22 +41,21 @@ gem 'pg'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 end
-
-group :production do
-  gem 'pg'
-end
-
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
