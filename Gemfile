@@ -30,6 +30,8 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
 
+gem 'sqlite3'
+gem 'pg'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
